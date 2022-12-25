@@ -1,0 +1,40 @@
+{% extends "char_al/base.html" %}
+{% block content %}
+<div class="flex-div">
+    <form method="POST" enctype="multipart/form-data" name="form" onsubmit="required()">
+        <div class="upload">
+            {% csrf_token %}
+            <input id="Input" name="Datafile" type="file" oninput="input_notif()">
+            <p>Drag your files here or click in this area.</p>
+        </div>
+        <button class= "submit" type="submit">Upload</button>
+        <p id="validation"></p>
+    </form> 
+</div>
+
+<script>    
+
+    function input_notif(){
+        let input = document.getElementById("Input").value;
+        if (input != ""){
+            let element = document.getElementById("validation");
+            element.classList.add("input-val");
+            element.innerHTML = input + " Have Uploaded successfuly"
+        }
+    }
+
+    function required(){
+            
+            let empt = document.forms["form"]["Datafile"].value;
+            if (empt == "")
+            {
+                let element = document.getElementById("validation");
+                element.classList.add("false-val");
+                element.innerHTML = "Please Enter a file to predict"
+                event.preventDefault();
+                returnToPreviousPage();
+                return false;
+            }
+        }
+</script>
+{% endblock content %}

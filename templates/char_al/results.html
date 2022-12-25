@@ -1,0 +1,93 @@
+{% extends "char_al/base.html" %}
+{% block content %}
+{% load static %}
+
+
+<div class="container">
+    <nav class="navbar">
+        <div>
+            <a href="/" class="links">Predict New Data</a>
+        </div>
+    </nav>
+</div>
+
+<div class="score">
+    <h1>{{acc_score}}%</h1>
+</div>
+<div class="tabels">
+    <div class="result-tab">
+        <table id="tableId">
+            <tr>
+                <th>id</th>
+                <th>Actual</th>
+                <th>Predicted</th>
+            </tr>
+            {% for result in result_dict.items %}
+            <tr class="chose">
+                <td>{{result.0}}</td>
+                <td>{{result.1.0}}</td>
+                {% if result.1.0 == result.1.1 %}
+                <td class="true">{{result.1.1}}</td>
+                {% else %}
+                <td class="false">{{result.1.1}}</td>
+                {% endif %}
+            </tr>
+            {% endfor%}
+            
+        </table>
+    </div>
+
+
+    <div class="detail-tab">
+
+        <table id="Detailtab">
+
+        </table>
+
+    </div>
+
+</div> 
+
+<script>
+
+    function createrows(id){
+        let headers = JSON.parse("{{headers|escapejs}}")
+        let data = JSON.parse("{{data|escapejs}}")   
+        
+        let table = document.getElementById("Detailtab");
+        table.innerHTML = "";
+        let rows = table.getElementsByTagName('tr')
+
+        for(let i = 0; i<headers.length-1; i++){
+            let headerCell = document.createElement("th");
+            headerCell.innerHTML = headers[i];
+            let row = table.insertRow();
+            row.appendChild(headerCell);
+            
+            let cell1 = row.insertCell(1);
+            cell1.innerHTML = data[id][i];
+        }
+    }
+
+    function Handlerowclick(){
+        let table = document.getElementById('tableId');
+        let rows = table.getElementsByTagName('tr');
+
+        for(let i=0; i < rows.length; i++){
+            let currentRow = table.rows[i];
+            const Clickhandler = (row) => {
+                return () => { 
+                                        var cell = row.getElementsByTagName("td")[0];
+                                        var id = cell.innerHTML;
+                                        createrows(id)
+                                };
+            }
+            currentRow.onclick = Clickhandler(currentRow)
+        }
+    }
+
+    window.onload = Handlerowclick();
+
+
+</script>
+{% endblock content %}

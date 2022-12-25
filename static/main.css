@@ -1,0 +1,207 @@
+
+:root{
+    --mainColor: rgb(24, 119, 242);
+}
+
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    text-align: center;
+}
+
+html{
+    font-size: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    background: rgba(240,240,240,0.8);
+}
+
+/* navbar */
+
+.navbar{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+}
+
+nav a{
+    color: white;
+    font-weight: 600;
+    font-size: 2rem;
+    margin:0rem 5rem;
+}
+
+
+/* form */
+.container{
+    width: 100%;
+    background-color: var(--mainColor);
+}
+
+
+
+.flex-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 700px;
+}
+form{
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    width: 30%;
+    margin: auto;
+    
+}
+
+.upload{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    position: relative;
+    border: 4px dashed black;
+    height: 100px;
+    top: 50%;
+}
+
+.upload input{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    opacity: 0;
+}
+
+.upload p{
+    color: black;
+    font-size: 2rem;
+}
+
+.submit{
+    background-color: var(--mainColor);
+    color: white;
+    font-size: 2rem;
+    font-weight: 600;
+    padding: 1rem 2rem;
+    margin-top: 2rem;
+    border: none;
+    cursor: pointer;
+}
+
+.submit:hover{
+    background-color: rgb(24, 119, 242,0.9);
+    
+}
+
+form .input-val{
+    margin-top: 3rem;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: black;
+    text-align: center;
+}
+
+.false-val{
+    margin-top: 3rem;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: red;
+    text-align: center;
+}
+
+/* results */
+
+.score{
+    font-size: 3rem;
+    font-weight: 600;
+    width: 30%;
+    height: 150px;
+    margin: 2rem auto;
+    background-color: rgb(57, 234, 113);
+    border: 1.5px solid var(--mainColor);
+    
+}
+.score h1{
+    position: relative;
+    margin-top: 3rem;
+}
+
+.tabels{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    width: 80%;
+    max-height: 400px;
+    margin: 4.5rem auto;
+    font-size: 1.5rem;
+    font-weight: 600;
+    
+}
+
+.detail-tab{
+    margin-right: 5rem;
+    padding-right: 5rem;
+    width: 80%;
+    overflow-y: scroll;
+}
+
+.result-tab{
+    margin-right: 5rem;
+    padding-right: 5rem;
+    width: 80%;
+    border-right: 1px solid gray;
+    overflow-y: scroll;
+}
+
+
+
+
+.tabels tr:nth-child(even){background-color: rgb(215, 214, 214)}
+
+.tabels table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.tabels th, td {
+    text-align: center;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;  
+}
+
+.tabels th {
+    background-color: var(--mainColor   );
+    color: white;
+}
+
+.result-tab .chose:hover {
+    cursor: pointer;
+    background-color: rgba(100, 99, 99, 0.8);
+}
+
+.result-tab tr:nth-child(even):hover{background-color: rgba(100, 99, 99, 0.8)}
+
+td.true{
+    background-color: rgb(57, 234, 113);
+}
+
+td.false{
+    background-color: rgb(227, 95, 85);
+}
+
+
+
+

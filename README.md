@@ -24,15 +24,15 @@ open the terminal in vs code and activate your virtual environment by this comma
 venv/Scripts/activate
 
 
-then install all requirement by typing this command:
+5) then install all requirement by typing this command:
 
 pip install -r requirements.txt
 
 
 
-wait till all the requirements have been installed. then run the server by this command
+6) wait till all the requirements have been installed. then run the server by this command
 
-python manage.py runserver
+*python manage.py runserver
 
 
 

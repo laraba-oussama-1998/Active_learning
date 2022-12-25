@@ -6,7 +6,7 @@ create a new folder. name whatever you want, go to the folder path with cmd and 
 git clone https://github.com/laraba-oussama-1998/Active_learning.git
 
 
-2)create a virtual environment:
+2) create a virtual environment:
 write this command in cmd to create a virtual environment
 
 python -m venv venv

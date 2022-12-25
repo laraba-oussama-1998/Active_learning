@@ -5,6 +5,8 @@ create a new folder. name whatever you want, go to the folder path with cmd and 
 
 git clone https://github.com/laraba-oussama-1998/Active_learning.git
 
+or go to https://github.com/laraba-oussama-1998/Active_learning.git and download the code and unzip it into the folder
+
 
 2) create a virtual environment:
 write this command in cmd to create a virtual environment
@@ -24,7 +26,9 @@ open the terminal in vs code and activate your virtual environment by this comma
 venv/Scripts/activate
 
 
-5) then install all requirement by typing this command:
+5) then install all requirement 
+if you are using python version > 3.9 please  go to requirements.txt and replace    backports.zoneinfo==0.2.1   by   backports.zoneinfo;python_version<"3.9"
+  and then type the below command
 
 pip install -r requirements.txt
 

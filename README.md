@@ -32,7 +32,7 @@ pip install -r requirements.txt
 
 6) wait till all the requirements have been installed. then run the server by this command
 
-*python manage.py runserver
+python manage.py runserver
 
 
 
